@@ -1,2 +1,5 @@
-<app-zipcode-input></app-zipcode-input>
-<app-weather-card></app-weather-card>
+<app-zipcode-input (zipcodeEmit)="onAddZip($event)"></app-zipcode-input>
+<app-weather-card
+  *ngFor="let item of zip$ | async"
+  [zipcode]="item"
+></app-weather-card>

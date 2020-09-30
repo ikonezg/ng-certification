@@ -5,7 +5,11 @@
     placeholder="Zipcode"
     type="text"
     id="addLocation"
+    [(ngModel)]="zipcode"
+    (keyup.enter)="onAddZipcode()"
   />
   <br />
-  <button class="btn btn-primary" id="addLocationBtn">Add location</button>
+  <button class="btn btn-primary" id="addLocationBtn" (click)="onAddZipcode()">
+    Add location
+  </button>
 </div>
