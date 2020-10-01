@@ -41,14 +41,18 @@
       <li class="list-group-item">
         Friday, Mar 27: Clear - Min: 40 - Max: 57
 
-        <img
-          class="icon"
+        <img class="icon"
           src="https://www.angulartraining.com/images/weather/snow.png"
         />
       </li>
     </ul>
   </div>
-  <button class="btn btn-success" tabindex="0" id="mainPageBtn">
+  <button
+    class="btn btn-success"
+    tabindex="0"
+    id="mainPageBtn"
+    (click)="onNavigateBack()"
+  >
     &lt; Back to main page
   </button>
 </div>
