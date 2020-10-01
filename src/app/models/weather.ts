@@ -4,4 +4,5 @@ export interface Weather {
   tempMax: string;
   tempMin: string;
   weather: string;
+  code: number;
 }

@@ -20,6 +20,7 @@ export class WeatherProviderService {
         tempMax: res.main.temp_max,
         tempMin: res.main.temp_min,
         weather: res.weather[0].main,
+        code: res.weather[0].id,
       }))
     );
   }

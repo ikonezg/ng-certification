@@ -2,4 +2,5 @@
 <app-weather-card
   *ngFor="let item of zip$ | async"
   [zipcode]="item"
+  (closeCard)="onCloseWatherCard($event)"
 ></app-weather-card>

@@ -16,8 +16,8 @@
         </p>
       </div>
       <div>
-        <span class="close">×</span>
-        <img src="https://www.angulartraining.com/images/weather/sun.png" />
+        <span class="close" (click)="onClose()">×</span>
+        <app-display [code]="weather.code"></app-display>
       </div>
     </ng-container>
     <ng-template #loading>Loading ...</ng-template>

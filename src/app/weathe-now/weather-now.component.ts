@@ -19,4 +19,8 @@ export class WeatherNowComponent implements OnInit {
       this.weatherState.addZipcode(zipcode);
     }
   }
+
+  onCloseWatherCard(zipcode: string) {
+    this.weatherState.removeZipcode(zipcode);
+  }
 }
