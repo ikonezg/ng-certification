@@ -9,7 +9,7 @@ const routes: Routes = [
       import('./weathe-now/weathe-now.module').then((m) => m.WeatheNowModule),
   },
   {
-    path: 'weather-long',
+    path: 'forecast',
     loadChildren: () =>
       import('./weather-long/weather-long.module').then(
         (m) => m.WeatherLongModule

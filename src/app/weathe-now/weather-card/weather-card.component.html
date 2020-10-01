@@ -10,7 +10,7 @@
           {{ weather.tempMin }}
         </p>
         <p>
-          <a href="/forecast/95742"
+          <a [routerLink]="'/forecast/' + zipcode"
             >Show 5-day forecast for {{ weather.name }}</a
           >
         </p>
