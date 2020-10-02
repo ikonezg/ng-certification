@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { WeatherProviderService } from '../services/weather-provider.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, switchMap } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { WeatherList } from '../models/weather';
@@ -17,7 +17,8 @@ export class WeatherLongComponent implements OnInit {
 	constructor(
 		private location: Location,
 		private weatherService: WeatherProviderService,
-		private route: ActivatedRoute
+		private route: ActivatedRoute,
+		private router: Router
 	) {}
 
 	ngOnInit(): void {
@@ -33,6 +34,7 @@ export class WeatherLongComponent implements OnInit {
 	}
 
 	onNavigateBack(): void {
-		this.location.back();
+		// this.location.back();
+		this.router.navigateByUrl('/weather-now');
 	}
 }

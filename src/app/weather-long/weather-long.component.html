@@ -1,21 +1,24 @@
 <h4>Template for 5-day forecast page:</h4>
-<div class="container-fluid" *ngIf="(forecast$ | async) as weather; else loading">
+<div class="container-fluid" >
   
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">5-day forecast for {{weather.name}}</h3>
-    </div>
-    <ul class="list-group">
-      <!---->
-      <li class="list-group-item" *ngFor="let item of weather.list">
-        {{item.date}}: {{item.weather}} - Min: {{item.tempMin}} - Max: {{item.tempMax}} 
+    <ng-container *ngIf="(forecast$ | async) as weather; else loading">
+      <div class="panel-heading">
+        <h3 class="panel-title">5-day forecast for {{weather.name}}</h3>
+      </div>
+      <ul class="list-group">
+        <!---->
+        <li class="list-group-item" *ngFor="let item of weather.list">
+          {{item.date}}: {{item.weather}} - Min: {{item.tempMin}} - Max: {{item.tempMax}} 
+  
+          <div class="icon">
+            <app-display [code]="item.code" [small]="true"></app-display>
+          </div>
+        </li>
+        
+      </ul>
 
-        <div class="icon">
-          <app-display [code]="item.code" [small]="true"></app-display>
-        </div>
-      </li>
-      
-    </ul>
+    </ng-container>
   </div>
   <button
     class="btn btn-success"
@@ -25,8 +28,8 @@
   >
     &lt; Back to main page
   </button>
+  <ng-template #loading>
+    <ng-container *ngIf="!errorObject">Loading ...</ng-container>
+    <ng-container *ngIf="errorObject">Something is wrong with zipcode !!!</ng-container>
+  </ng-template>
 </div>
-<ng-template #loading>
-  <ng-container *ngIf="!errorObject">Loading ...</ng-container>
-  <ng-container *ngIf="errorObject">Something is wrong with zipcode !!!</ng-container>
-</ng-template>
