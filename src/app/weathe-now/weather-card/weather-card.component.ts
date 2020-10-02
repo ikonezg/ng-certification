@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Observable, of, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { Weather } from 'src/app/models/weather';
 import { WeatherStateService } from 'src/app/services/weather-state.service';
 import { WeatherProviderService } from '../../services/weather-provider.service';
