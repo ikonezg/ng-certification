@@ -10,10 +10,6 @@
       <li class="list-group-item" *ngFor="let item of weather.list">
         {{item.date}}: {{item.weather}} - Min: {{item.tempMin}} - Max: {{item.tempMax}} 
 
-        <!-- <img
-          class="icon"
-          src="https://www.angulartraining.com/images/weather/rain.png"
-        /> -->
         <div class="icon">
           <app-display [code]="item.code" [small]="true"></app-display>
         </div>
