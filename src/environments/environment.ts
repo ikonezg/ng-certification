@@ -5,7 +5,7 @@
 export const environment = {
 	production: false,
 	apiUrlNow: 'https://api.openweathermap.org/data/2.5/weather?zip=',
-	apiUrlForecast: 'https://api.openweathermap.org/data/2.5/forecast?zip=',
+	apiUrlForecast: 'https://api.openweathermap.org/data/2.5/forecast/daily?zip=',
 	imageUrl: 'https://www.angulartraining.com/images/weather/'
 };
 

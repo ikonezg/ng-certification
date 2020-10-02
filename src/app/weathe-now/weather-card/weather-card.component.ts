@@ -13,7 +13,6 @@ export class WeatherCardComponent implements OnInit {
 	@Output() closeCard = new EventEmitter<string>();
 
 	weather$: Observable<Weather>;
-	error: any;
 	errorObject: any;
 	constructor(private weatherService: WeatherProviderService) {}
 
