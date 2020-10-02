@@ -20,6 +20,9 @@
         <app-display [code]="weather.code"></app-display>
       </div>
     </ng-container>
-    <ng-template #loading>Loading ...</ng-template>
+    <ng-template #loading>
+      <ng-container *ngIf="errorObject">You have entered the wrong zipcode!!! <span class="close" (click)="onClose()">×</span></ng-container>
+      <ng-container *ngIf="!errorObject">Loading ...</ng-container>
+    </ng-template>
   </div>
 </div>
